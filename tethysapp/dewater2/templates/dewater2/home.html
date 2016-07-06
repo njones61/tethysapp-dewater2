@@ -1,0 +1,85 @@
+{% extends "dewater2/base.html" %}
+
+{% load tethys_gizmos %}
+
+{% load staticfiles %}
+
+{% block app_navigation_items %}
+
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#welcome-popup">Instructions</button>
+
+	<li class='title'><b>Aquifer Properties</b></li>
+
+	<form id="dewater" action="{% url 'dewater2:home' %}" method="post">
+	  	{% csrf_token %}
+
+	  	{% gizmo text_input k %}
+		{% gizmo text_input bedrock %}
+		{% gizmo text_input iwte %}
+
+		<li class='title'><b>Project Specifications</b></li>
+
+		{% gizmo text_input q %}
+		{% gizmo text_input dwte %}
+
+		{% gizmo button execute %}
+	</form>
+
+{% endblock %}
+
+
+{% block app_content %}
+
+  {% gizmo map_view map_view_options %}
+
+{% endblock %}
+
+
+{% block app_content_wrapper_override %}
+<!-- Modal  -->
+<div class="modal fade" id="welcome-popup" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Welcome to the Construction Dewatering Simulator!</h4>
+            </div>
+            <div class="modal-body">
+                <div id="welcome-info">
+					<p>This tool is used to aid in the design of a simple construction dewatering system in an unconfined aquifer underlain by bedrock or a low permeability layer. The system consists of one or more wells that fully penetrate the aquifer. Steps:
+                    <ol>
+                        <h6>1. Enter aquifer properties</h6>
+                        <p>Enter the average hydraulic conductivity of the aquifer, the average bedrock elevation, and the average water table elevation prior to pumping.</p>
+                        <h6>2. Enter the project parameters</h6>
+                        <p>Enter the total pumping rate (each well will pump an equal fraction of this amount and the desired water table elevation (typically at or below the bottom of the planned excavation).</p>
+                        <h6>3. Set map features</h6>
+                        <p>Use the navigation tools on the map to locate your project and then use the rectangle tool to indicate the location of your excavation and use the point tool on the map to enter the locations of your wells.</p>                      
+						<h6>4. Perform calculations</h6>
+                        <p>Click on the "Calculate Water Table Elevations" tool to perform the drawdown calculations and display the results on the map.</p>
+                        
+<h9>Note: INSERT A REFERENCE TO EQUATIONS USED.
+                        </h9>
+
+                    </ol>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="byu-logo-container">
+                    <span><i>Developed by Prof. Norm Jones, Brigham Young University</i></span>
+                    <img src="{% static 'dewater2/images/byu-medallion.png' %}"/>
+                </div>
+                <button type="button" class="btn btn-default" id="close-popup" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+{{block.super}}
+{% endblock %}
+
+
+{% block app_actions %}
+  <a href="" class="btn btn-default">Next</a>
+  <a href="" class="btn btn-default">Back</a>
+{% endblock %}
