@@ -10,7 +10,6 @@
 
 	<li class='title'><b>Aquifer Properties</b></li>
 
-	<form id="dewater" action="{% url 'dewater2:home' %}" method="post">
 	  	{% csrf_token %}
 
 	  	{% gizmo text_input k %}
@@ -23,7 +22,6 @@
 		{% gizmo text_input dwte %}
 
 		{% gizmo button execute %}
-	</form>
 
 {% endblock %}
 
@@ -32,10 +30,31 @@
 
   {% gizmo map_view map_view_options %}
 
+<!--Modal to be called for error checking-->
+<div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Error message</h4>
+      </div>
+      <div class="modal-body">
+          <div id="textDiv">
+            <p><span></span></p>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>  
+
 {% endblock %}
 
 
 {% block app_content_wrapper_override %}
+
 <!-- Modal  -->
 <div class="modal fade" id="welcome-popup" role="dialog">
     <div class="modal-dialog">
@@ -80,6 +99,5 @@
 
 
 {% block app_actions %}
-  <a href="" class="btn btn-default">Next</a>
-  <a href="" class="btn btn-default">Back</a>
+
 {% endblock %}

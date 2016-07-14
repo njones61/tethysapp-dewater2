@@ -90,8 +90,7 @@ def home(request):
     )
 
 
-    context = {'instructions':instructions,
-			   'k':k,
+    context = {'k':k,
                'bedrock':bedrock,
                'iwte':iwte,
                'q':q, 

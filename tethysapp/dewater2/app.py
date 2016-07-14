@@ -6,13 +6,13 @@ class ConstructionDewateringSimulator(TethysAppBase):
     Tethys app class for Construction Dewatering Simulator.
     """
 
-    name = 'Construction Dewatering Simulator'
+    name = 'Construction Dewatering Simulator (nlj)'
     index = 'dewater2:home'
     icon = 'dewater2/images/icon.gif'
     package = 'dewater2'
     root_url = 'dewater2'
     color = '#3366ff'
-    description = 'Place a brief description of your app here.'
+    description = 'Simple tool for simulating the water table drawdown due to a system of wells surrounding an excavation.'
     enable_feedback = False
     feedback_emails = []
 

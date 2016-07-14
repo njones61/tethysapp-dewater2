@@ -48,21 +48,13 @@
                 <div id="welcome-info">
 					<p>This tool is used to aid in the design of a simple construction dewatering system in an unconfined aquifer underlain by bedrock or a low permeability layer. The system consists of one or more wells that fully penetrate the aquifer. Steps:
                     <ol>
-                        <h6>1. Hydraulic conductivity (K)</h6>
-                        <p>Enter the average hydraulic conductivity of the aquifer.</p>
-                        <h6>2. Bedrock elevation</h6>
-                        <p>Enter the average elevation of the top of the bedrock or low K layer underlying the aquifer.</p>
-                        <h6>3. Initial water tabel elevation</h6>
-                        <p>Enter the average water table elevation prior to pumping.</p>
-                        <h6>4. Pumping rate</h6>
-                        <p>Enter the total pumping rate. Each well will pump an equal fraction of this amount.</p>
-                        <h6>5. Desired water table elevation</h6>
-                        <p>Enter the desired water table elevation. This is typically at or below the bottom of the planned excavation.</p>
-                        <h6>6. Locate project</h6>
-                        <p>Use the navigation tools on the map to locate your project.</p>
-                        <h6>7. Excavation outline</h6>
-                        <p>Use the rectangle tool to indicate the location of your excavation.</p>         <h6>6. Well locations</h6>
-                        <p>Use the point tool on the map to enter (or modify) the locations of your wells.</p>                      <h6>6. Perform calculations</h6>
+                        <h6>1. Enter aquifer properties</h6>
+                        <p>Enter the average hydraulic conductivity of the aquifer, the average bedrock elevation, and the average water table elevation prior to pumping.</p>
+                        <h6>2. Enter the project parameters</h6>
+                        <p>Enter the total pumping rate (each well will pump an equal fraction of this amount and the desired water table elevation (typically at or below the bottom of the planned excavation).</p>
+                        <h6>3. Set map features</h6>
+                        <p>Use the navigation tools on the map to locate your project and then use the rectangle tool to indicate the location of your excavation and use the point tool on the map to enter the locations of your wells.</p>                      
+						<h6>4. Perform calculations</h6>
                         <p>Click on the "Calculate Water Table Elevations" tool to perform the drawdown calculations and display the results on the map.</p>
                         
 <h9>Note: INSERT A REFERENCE TO EQUATIONS USED.

@@ -53,7 +53,7 @@ def home(request):
                   )
 
     execute = Button(display_text='Calculate Water Table Elevations',
-                     attributes='onclick=app.verify()',
+                     attributes='onclick=app.dewater()',
                      submit=True,
                      classes='btn-success')
 
@@ -70,7 +70,7 @@ def home(request):
 
     # Define drawing options
     drawing_options = MVDraw(
-        controls=['Box', 'Point', 'Move'],
+        controls=['Modify', 'Move','Box', 'Point'],
         initial='Box',
         output_format='WKT'
     )
@@ -90,12 +90,14 @@ def home(request):
     )
 
 
-    context = {'k':k,
-               'bedrock':bedrock,
-               'iwte':iwte,
-               'q':q, 
-               'dwte':dwte,
-			   'execute':execute,
-               'map_view_options': map_view_options}
+    context = {
+            'k':k,
+            'bedrock':bedrock,
+            'iwte':iwte,
+            'q':q, 
+            'dwte':dwte,
+			      'execute':execute,
+            'map_view_options': map_view_options
+    }
 
     return render(request, 'dewater2/home.html', context)
