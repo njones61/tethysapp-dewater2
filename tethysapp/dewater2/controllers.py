@@ -9,13 +9,7 @@ def home(request):
     Controller for the app home page.
     """
 
-    k = TextInput(display_text='Average Hydraulic Conductivity',
-                  name='k',
-                  initial='0.000231',
-                  placeholder='e.g. 0.000231',
-                  prepend='k =',
-                  append='[ft/s]',
-                  )
+
     k = TextInput(display_text='Average Hydraulic Conductivity',
                   name='k',
                   initial='0.000231',

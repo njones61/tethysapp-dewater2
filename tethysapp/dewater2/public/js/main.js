@@ -2,14 +2,31 @@
 //  ################################# Global declarations ##################################################
 "use strict";
 
-
-// Error message function using bootstrap
-function error_message(errMessageText) {
-    $('#ErrorModal').on('show.bs.modal', function (event) {
-        $( "p" ).find("span").text(errMessageText);
-    })
-    $('#ErrorModal').modal('show')
+function welcome_modal() {
+    var myHTMLBody = 
+        "<p>This tool is used to aid in the design of a simple construction dewatering system in" +
+        "an unconfined aquifer underlain by bedrock or a low permeability layer. The system consists" +
+        "of one or more wells that fully penetrate the aquifer. Steps:</p>" +
+            "<h6>1. Enter aquifer properties</h6>" +
+                "<p>Enter the average hydraulic conductivity of the aquifer, the average bedrock elevation," +
+                "and the average water table elevation prior to pumping.</p>" +
+                "<h6>2. Enter the project parameters</h6>" +
+                "<p>Enter the total pumping rate (each well will pump an equal fraction of this amount and " +
+                "the desired water table elevation (typically at or below the bottom of the planned excavation).</p>" +
+            "<h6>3. Set map features</h6>" +
+                "<p>Use the navigation tools on the map to locate your project and then use the rectangle tool to " +
+                "indicate the location of your excavation and use the point tool on the map to enter the locations of " +
+                "your wells.</p>" +
+                "<h6>4. Perform calculations</h6>" +
+                "<p>Click on the 'Calculate Water Table Elevations' tool to perform the drawdown calculations and "
+                "display the results on the map.</p>" +     
+            "<h9>Note: INSERT A REFERENCE TO EQUATIONS USED.</h9>";
+    modal_dialog("Instructions", myHTMLBody, true);
 }
+
+$(document).ready(function(){
+    welcome_modal();
+});
 
 //  #################################### Verify that the user has the necessary variables ##############################
 
