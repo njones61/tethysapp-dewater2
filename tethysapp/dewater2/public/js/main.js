@@ -18,7 +18,7 @@ function welcome_modal() {
                 "indicate the location of your excavation and use the point tool on the map to enter the locations of " +
                 "your wells.</p>" +
                 "<h6>4. Perform calculations</h6>" +
-                "<p>Click on the 'Calculate Water Table Elevations' tool to perform the drawdown calculations and "
+                "<p>Click on the 'Calculate Water Table Elevations' tool to perform the drawdown calculations and " +
                 "display the results on the map.</p>" +     
             "<h9>Note: INSERT A REFERENCE TO EQUATIONS USED.</h9>";
     modal_dialog("Instructions", myHTMLBody, true);
@@ -318,7 +318,7 @@ function addWaterTable(raster_elev,titleName){
             return [196,87,0,0.7];       //Orange, Hex:C45700
         else
             return [191,0,23, 0.7];           //Red, Hex:BF0017
-        };
+    };
 
     var defaultStyle = new ol.style.Style({
     //    var img = new Image();

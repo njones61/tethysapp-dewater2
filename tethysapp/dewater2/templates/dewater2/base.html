@@ -21,11 +21,11 @@
 	<!--Modal to be called for error checking, welcome screen, etc. 
 	    See modal.js
 	-->
-	<div class="modal fade" id="GenericModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		<div class="modal-dialog" role="document">
+	<div class="modal fade" id="GenericModal" role="dialog">
+		<div class="modal-dialog">
 	 		<div class="modal-content">
 	      		<div class="modal-header">
-	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               		<button type="button" class="close" data-dismiss="modal">&times;</button>
 	        		<h4 class="modal-title" id="ModalTitle">TITLE</h4>
 	      		</div>
 	      		<div class="modal-body">
@@ -55,12 +55,10 @@
 {% block content_dependent_styles %}
   {{ block.super }}
   <link href="{% static 'dewater2/css/main.css' %}" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 {% endblock %}
 
 {% block scripts %}
   {{ block.super }}
   <script src="{% static 'dewater2/js/modal.js' %}" type="text/javascript"></script>
   <script src="{% static 'dewater2/js/main.js' %}" type="text/javascript"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 {% endblock %}
